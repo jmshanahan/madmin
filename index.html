@@ -98,7 +98,7 @@
       </div>
     </nav>
     <!-- Section: Stats -->
-    <section class="section section-stats center">
+    <section class="section section-stats center ">
       <div class="container">
         <div class="row">
           <div class="col s12 m6 l3">
@@ -146,18 +146,18 @@
     </section>
     <!-- Preloader -->
     <div class="loader preloader-wrapper big active">
-        <div class="spinner-layer spinner-blue">
-          <div class="circle-clipper left">
-            <div class="circle"></div>
-          </div><div class="gap-patch">
-            <div class="circle"></div>
-          </div><div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
         </div>
-
-
-
+        <div class="gap-patch">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
 
     <!--Import jQuery before materialize.js-->
     <script
@@ -170,6 +170,7 @@
       setTimeout(function() {
         $(document).ready(function() {
           $('.section').fadeIn();
+          $('.loader').fadeOut();
           //Init Side nav
           $('.button-collapse').sideNav();
 

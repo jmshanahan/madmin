@@ -3,3 +3,11 @@
   top: 40%;
   left: 47%;
 }
+.grouping::before,
+.grouping::after {
+  content: ' ';
+  display: table;
+}
+.grouping::after {
+  clear: both;
+}
