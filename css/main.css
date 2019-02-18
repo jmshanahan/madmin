@@ -11,3 +11,6 @@
 .grouping::after {
   clear: both;
 }
+.clearFix {
+  display: flow-root;
+}

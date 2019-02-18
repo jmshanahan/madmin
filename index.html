@@ -20,7 +20,7 @@
     <title>Custom Materialize Theme</title>
   </head>
 
-  <body>
+  <body class="grey lighten-4">
     <nav class="blue darken-2">
       <div class="container">
         <div class="nav-wrapper">
@@ -99,8 +99,8 @@
     </nav>
     <!-- Section: Stats -->
     <section class="section section-stats center ">
-      <div class="container">
-        <div class="row">
+      <!-- <div class="container clearFix"> -->
+        <div class="row ">
           <div class="col s12 m6 l3">
             <div class="card-panel blue loghten-1 white-text center">
               <i class="material-icons medium">insert_emoticon</i>
@@ -142,10 +142,10 @@
             </div>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
     </section>
     <!--  Section Visitors -->
-    <section class="section section-visitors blue lighten-4">
+    <section class="section section-visitors blue lighten-5">
       <div class="row">
         <div class="col s12 m6 l8">
           <div id="chartContainer" style="height: 300px; width: 100%"></div>
@@ -192,6 +192,147 @@
         </div>
       </div>
     </section>
+    <!-- Section: Recent Posta & todos -->
+    <section class="section section-recent">
+      <div class="row">
+        <div class="col s12 l8 m8">
+          <div class="card">
+            <div class="card-content">
+              <span class="cart-title">Recent Posts</span>
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Post One</td>
+                    <td>Web Development</td>
+                    <td>
+                      <a href="details.html" class="btn blue-lighten-2">Details</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Post Tow</td>
+                    <td>Graphic Design</td>
+                    <td>
+                      <a href="details.html" class="btn blue-lighten-2">Details</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Post Three</td>
+                    <td>Web Development</td>
+                    <td>
+                      <a href="details.html" class="btn blue-lighten-2">Details</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4 l4">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Quick Todos</span>
+              <form id="todo-form">
+                <input type="text" id="todo" placeholder="Add Todo...">
+              </form>
+              <ul class="collection todos">
+                <li class="collection-item">
+                  <div>Todo One <a href="#!" class="secondary-content delete">
+                    <i class="material-icons">close</i>
+                  </a></div>
+                </li>
+                <li class="collection-item">
+                  <div>Todo Two <a href="#!" class="secondary-content delete">
+                    <i class="material-icons">close</i>
+                  </a></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="section blue darken-2 white-text center">
+      <p>Madmin Panel Copyritht &copy; 2019</p>
+    </footer>
+
+    <!-- Add Post Modal -->
+    <div id="post-modal" class="modal">
+      <div class="modal-content">
+        <h4>Add Post</h4>
+        <form>
+          <div class="input-field">
+            <input type="text" id="title">
+            <label for="title">Title</label>
+          </div>
+          <div class="input-field">
+            <select>
+              <option value="" disabled selected>Select option</option>
+              <option value="1">Web Development</option>
+              <option value="2">Graphic Design</option>
+              <option value="3">Tech Gadgets</option>
+              <option value="4">Other</option>
+            </select>
+            <label>Category</label>
+          </div>
+          <div class="input-field">
+            <textarea name="body" id="body"class="materialize-textarea"></textarea>
+            <label for="body">Body</label>
+          </div>
+        </form>
+        <div class="modal-footer">
+          <a href="#!" class="model-action modal-close btn blue white-text">Submit</a>
+        </div>
+      </div>
+    </div>
+    <!-- Add Category Modal -->
+    <div id="category-modal" class="modal">
+      <div class="modal-content">
+        <h4>Add Cagegory</h4>
+        <form>
+          <div class="input-field">
+            <input type="text" id="title">
+            <label for="title">Title</label>
+          </div>
+        </form>
+        <div class="modal-footer">
+          <a href="#!" class="model-action modal-close btn blue white-text">Submit</a>
+        </div>
+      </div>
+    </div>    <!-- Add User Modal -->
+    <div id="user-modal" class="modal">
+      <div class="modal-content">
+        <h4>Add User</h4>
+        <form>
+          <div class="input-field">
+            <input type="text" id="name">
+            <label for="name">Title</label>
+          </div>
+          <div class="input-field">
+            <input type="email" id="email">
+            <label for="email">Email</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="password">
+            <label for="password">Password</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="password2">
+            <label for="password2">Confirm Password</label>
+          </div>
+        </form>
+        <div class="modal-footer">
+          <a href="#!" class="model-action modal-close btn blue white-text">Submit</a>
+        </div>
+      </div>
+    </div>
+
 
     <!-- Preloader -->
     <div class="loader preloader-wrapper big active">
@@ -207,7 +348,18 @@
         </div>
       </div>
     </div>
+    <!-- Fixed Action Button -->
+    <div class="fixed-action-btn">
+      <a  class="btn-floating btn-large red"><i class="material-icons">add</i></a>
+      <ul>
+        <li><a href="#post-modal" class="modal-trigger btn-floating blue"><i class="material-icons">mode_edit</i></a></li>
 
+        <li><a href="#category-modal" class="modal-trigger btn-floating blue"><i class="material-icons">folder</i></a></li>
+  
+        <li><a href="#user-modal" class="modal-trigger btn-floating blue"><i class="material-icons">supervisor_account</i></a></li>
+      </ul>
+
+    </div>
     <!--Import jQuery before materialize.js-->
     <script
       type="text/javascript"
@@ -215,6 +367,7 @@
     ></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
     <script src="js/chart.js"></script>
     <script>
       $('.section').hide();
@@ -224,7 +377,8 @@
           $('.loader').fadeOut();
           //Init Side nav
           $('.button-collapse').sideNav();
-
+          $('.modal').modal();
+          $('select').material_select();
           $('.count').each(function() {
             $(this)
               .prop('Counter', 0)
@@ -241,17 +395,41 @@
                 }
               );
           });
-        });
-        $('.approve').click(function(event){
-            Materialize.toast('Comment Approaved', 3000)
-            event.preventDefault();
-        });
-        $('.deny').click(function(event){
+
+            $('.approve').click(function(event){
+              Materialize.toast('Comment Approaved', 3000)
+              event.preventDefault();
+            }); 
+            $('.deny').click(function(event){
             Materialize.toast('Comment Denied', 3000)
             event.preventDefault();
+          });
+            $('#todo-form').submit(function(e){
+            const output = `
+            <li class="collection-item">
+                    <div>${$('#todo').val()} <a href="#!" class="secondary-content delete">
+                      <i class="material-icons">close</i>
+                    </a></div>
+                  </li>`;
+            $('.todos').append(output); 
+            Materialize.toast('Todo Added',3000) ;
+
+            e.preventDefault()
+          })
+
+          $('.todos').on('click','.delete', function(e){
+          console.log($(this).parent().parent());
+          $(this).parent().parent().remove();
+          Materialize.toast('Todo Removed', 3000);
+          e.preventDefault();
+        }) 
+        CKEDITOR.replace( 'body' );
         });
 
-      });
+
+
+
+      },1000);
     </script>
   </body>
 </html>
